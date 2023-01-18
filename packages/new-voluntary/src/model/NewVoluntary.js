@@ -1,24 +1,18 @@
 const mongoose = require("mongoose");
 
-const donationTypeSchema = mongoose.Schema({
-	roupas: Boolean,
-	eletro: Boolean,
-	moveis: Boolean,
-	outros: Boolean,
-});
-
 const schema = mongoose.Schema({
 	_id: mongoose.Schema.Types.ObjectId,
 	userId: Number,
 	cityid: Number,
+	name: String,
+	cpf: String,
+	car: String,
+	sign: String,
 	street: String,
 	streetNumber: Number,
 	referencePoint: String,
 	latitude: Number,
-	longitude: Number,
-	donationType: donationTypeSchema,
-	description: String,
-	images: [String],
+	longitude: Number,	
 	isResolved: Boolean,
 	date: Date,
 });
