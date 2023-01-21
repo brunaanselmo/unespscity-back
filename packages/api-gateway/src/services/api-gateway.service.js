@@ -391,6 +391,18 @@ module.exports = {
 					"PUT /needyfamilies": "v1.needy-families.update",
 					"DELETE /needyfamilies": "v1.needy-families.delete",
 
+					//DONATION
+					"POST /donations": "v1.donations.create",
+					"GET /donations": "v1.donations.getAll",
+					"PUT /donations": "v1.donations.update",
+					"DELETE /donations": "v1.donations.delete",
+
+					//NEW VOLUNTARY
+					"POST /newvoluntaries": "v1.newvoluntaries.create",
+					"GET /newvoluntaries": "v1.newvoluntaries.getAll",
+					"PUT /newvoluntaries": "v1.newvoluntaries.update",
+					"DELETE /newvoluntaries": "v1.newvoluntaries.delete",
+
 					//HOMELESS PEOPLE
 					"POST /homelesspeople": "v1.homeless-people.create",
 					"GET /homelesspeople": "v1.homeless-people.getAll",

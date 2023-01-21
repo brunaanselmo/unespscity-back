@@ -1,8 +1,8 @@
-const Donation = require("../model/Donation");
+const Donations = require("../model/Donations");
 const mongoose = require("mongoose");
 
 module.exports = {
-	name: "donation",
+	name: "donations",
 	version: 1,
 	actions: {
 		create: {
@@ -32,7 +32,7 @@ module.exports = {
 						ctx.params.data.donationType &&
 						ctx.params.data.description
 					) {
-						return Donation.create({
+						return Donations.create({
 							_id,
 							userId: ctx.params.data.userId,
 							cityid: ctx.params.data.cityid,
@@ -42,6 +42,8 @@ module.exports = {
 							latitude: ctx.params.data.latitude,
 							longitude: ctx.params.data.longitude,
 							donationType: ctx.params.data.donationType,
+							description: ctx.params.data.description,
+							images: ctx.params.data.images,
 							isResolved: false,
 							date: today,
 						});
@@ -53,14 +55,14 @@ module.exports = {
 
 		getAll: {
 			async handler(ctx) {
-				return await Donation.find();
+				return await Donations.find();
 			},
 		},
 
 		getById: {
 			async handler(ctx) {
 				if (ctx.params && ctx.params.id) {
-					return await Donation.find({
+					return await Donations.find({
 						_id: ctx.params.id,
 					});
 				}
@@ -71,7 +73,7 @@ module.exports = {
 		update: {
 			async handler(ctx) {
 				if (ctx.params.data && ctx.params.data.id) {
-					return await Donation.updateOne(
+					return await Donations.updateOne(
 						{ _id: ctx.params.id },
 						{
 							$set: {
@@ -96,7 +98,7 @@ module.exports = {
 		updateResolved: {
 			async handler(ctx) {
 				if (ctx.params && ctx.params.id) {
-					return await Donation.updateOne(
+					return await Donations.updateOne(
 						{ _id: ctx.params.id },
 						{ $set: { isResolved: true } }
 					);
@@ -108,7 +110,7 @@ module.exports = {
 		delete: {
 			async handler(ctx) {
 				if (ctx.params && ctx.params.id) {
-					return await Donation.deleteOne({
+					return await Donations.deleteOne({
 						_id: ctx.params.id,
 					});
 				}

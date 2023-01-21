@@ -23,4 +23,4 @@ const schema = mongoose.Schema({
 	date: Date,
 });
 
-module.exports = mongoose.model("Donation", schema);
+module.exports = mongoose.model("Donations", schema);
