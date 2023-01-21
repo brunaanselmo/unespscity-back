@@ -413,14 +413,6 @@ module.exports = {
 						"v1.solidary-disposal.updateResolved",
 					"DELETE /solidarydisposal": "v1.solidary-disposal.delete",
 
-					//DONATION
-					"POST /donation": "v1.donation.create",
-					"GET /donation": "v1.donation.getAll",
-					"PUT /donation": "v1.donation.update",
-					"PUT /donation":
-						"v1.donation.updateResolved",
-					"DELETE /donation": "v1.donation.delete",
-
 					//THEFT REGISTER
 					"POST /theftregister": "v1.theft-register.create",
 					"GET /theftregister": "v1.theft-register.getAll",
