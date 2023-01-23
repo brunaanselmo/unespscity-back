@@ -1,4 +1,4 @@
-const newvoluntaries = require("../model/NewVoluntaries");
+const NewVoluntaries = require("../model/NewVoluntaries");
 const mongoose = require("mongoose");
 
 module.exports = {
@@ -37,7 +37,7 @@ module.exports = {
 						ctx.params.data.car &&
 						ctx.params.data.sign 						
 					) {
-						return newvoluntaries.create({
+						return NewVoluntaries.create({
 							_id,
 							userId: ctx.params.data.userId,
 							cityid: ctx.params.data.cityid,
@@ -62,14 +62,14 @@ module.exports = {
 
 		getAll: {
 			async handler(ctx) {
-				return await newvoluntaries.find();
+				return await NewVoluntaries.find();
 			},
 		},
 
 		getById: {
 			async handler(ctx) {
 				if (ctx.params && ctx.params.id) {
-					return await newvoluntaries.find({
+					return await NewVoluntaries.find({
 						_id: ctx.params.id,
 					});
 				}
@@ -80,7 +80,7 @@ module.exports = {
 		update: {
 			async handler(ctx) {
 				if (ctx.params.data && ctx.params.data.id) {
-					return await newvoluntaries.updateOne(
+					return await NewVoluntaries.updateOne(
 						{ _id: ctx.params.id },
 						{
 							$set: {
@@ -107,7 +107,7 @@ module.exports = {
 		updateResolved: {
 			async handler(ctx) {
 				if (ctx.params && ctx.params.id) {
-					return await newvoluntaries.updateOne(
+					return await NewVoluntaries.updateOne(
 						{ _id: ctx.params.id },
 						{ $set: { isResolved: true } }
 					);
@@ -119,7 +119,7 @@ module.exports = {
 		delete: {
 			async handler(ctx) {
 				if (ctx.params && ctx.params.id) {
-					return await newvoluntaries.deleteOne({
+					return await NewVoluntaries.deleteOne({
 						_id: ctx.params.id,
 					});
 				}

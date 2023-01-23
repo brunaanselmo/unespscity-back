@@ -5,7 +5,7 @@ const schema = mongoose.Schema({
 	cityid: Number,
 	userId: Number,
 	street: String,
-	streetNumber: Number,
+	streetNumber: String,
 	referencePoint: String,
 	latitude: Number,
 	longitude: Number,	
@@ -17,4 +17,4 @@ const schema = mongoose.Schema({
 	date: Date,
 });
 
-module.exports = mongoose.model("NewVoluntary", schema);
+module.exports = mongoose.model("NewVoluntaries", schema);
